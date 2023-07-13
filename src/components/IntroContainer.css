@@ -1,0 +1,11 @@
+.intro-container{
+  background-color: rgb(107, 77, 108);
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.player{
+    
+}
