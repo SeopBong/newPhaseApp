@@ -6,6 +6,17 @@
   align-items: center;
   width: 100%;
 }
-.player{
-    
+.intro-words{
+    padding-left: 30px;
+    text-align: left;
+}
+.intro-title{
+  color: rgb(121, 221, 126);
+  font-size: 50px;
+  font-weight: bold;
+
+}
+.intro-subtitles{
+  color: white;
+  font-size: 15px;
 }

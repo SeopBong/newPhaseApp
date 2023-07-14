@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import IntroContainer from './components/IntroContainer';
+import HowDoVision from './components/HowDoVision';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         </Navbar>
 
         <IntroContainer />
+        <HowDoVision />
   </div>
       
   );

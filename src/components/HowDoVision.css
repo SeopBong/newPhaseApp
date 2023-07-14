@@ -1,0 +1,17 @@
+.how-do-container{
+    background-color: white;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+
+  color: black;
+}
+.how-do-title{
+    font-weight: bold;
+}
+.monitor-img{
+    margin-bottom: 10px;
+}

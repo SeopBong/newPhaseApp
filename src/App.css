@@ -21,12 +21,14 @@
   absolute;
   right: 30px;
   transition: font-size 0.5s ease-in-out;
+  
   }@media (max-width: 800px){
   .me-auto{
     font-size: 10px;
+    margin-right: 1px;
+
   }
 }
-
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
