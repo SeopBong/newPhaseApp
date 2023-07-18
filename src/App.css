@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+
+
 .App {
   text-align: center;
 }
@@ -9,30 +13,27 @@
   font-size: 35px;
   font-weight: bold;
   margin-right: 30px;
-  transition: font-size 0.5s ease-in-out;
+  transition: font-size 0.5s ease-in-out, margin 0.5s ease-in-out;
   }@media (max-width: 960px){
   .brand-text{
     font-size: 20px;
+    margin-left: 30px;
+    margin-right: 0px;
+
   }
 }
 
 .me-auto{
-  position: 
-  absolute;
+  position: absolute;
   right: 30px;
   transition: font-size 0.5s ease-in-out;
-  
-  }@media (max-width: 800px){
+  }
+  /*@media (max-width: 800px){
   .me-auto{
-    font-size: 10px;
+    font-size: 25px;
   }
-}
+}*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;

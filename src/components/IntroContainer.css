@@ -1,22 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
+
 .intro-container{
   background-color: rgb(107, 77, 108);
-  height: 600px;
+  min-height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
+  
 .intro-words{
     padding-left: 30px;
     text-align: left;
+    transition: transform 0.5s ease-in-out;
 }
 .intro-title{
   color: rgb(121, 221, 126);
   font-size: 50px;
   font-weight: bold;
-
+  font-family: 'IBM Plex Sans KR', sans-serif;
 }
 .intro-subtitles{
   color: white;
   font-size: 15px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.player {
+  max-width: calc(100% - 60px);
+  height: auto;
+  margin: 30px;
+}
+@media (max-width: 1200px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: left;
+    /* margin-bottom: 65px; */
+  } 
+  .intro-words {
+    transform: translateY(0);
+  }
+
+  .intro-words.collapsed {
+    transform: translateY(100%);
+  }.intro-title{
+    font-size: 25px;
+  }
 }

@@ -7,12 +7,17 @@
   width: 100%;
   flex-direction: column;
   color: black;
-  margin-top: 50px;
+   margin-top: 50px; 
 }
  @media (max-width: 900px){
-    .how-do-container{
-        margin-top: -90px;
-    }
+  .how-do-container{
+    margin-top: 10px; 
+
+  }
+    /* .how-do-container{
+        margin-top: 90px;
+    } */
+
 }
 .how-do-title{
     font-weight: bold;

@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+.rest-part{
+    background-color: black;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+  }
+  .rest-subtitle{
+    font-family: 'Gamja Flower', cursive;
+    font-size: 35px;
+  }

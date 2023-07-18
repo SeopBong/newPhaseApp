@@ -74,7 +74,6 @@ const HowDoVision = (props) =>{
               top: "calc(50% - 30px)",
               left: "50%",
               transform: "translate(-50%, -50%)",
-              transition: "opacity 0.5s ease-in-out",
             }}
           />
         )}
@@ -92,7 +91,8 @@ const HowDoVision = (props) =>{
                         <FontAwesomeIcon 
                         icon={ item.icon } 
                         size='3x' 
-                        style={{color:'rgb(107, 77, 108)', 
+                        // style={{color:'rgb(107, 77, 108)', 
+                        style={{color:'rgb(0,0,0)', 
                         cursor: 'pointer', 
                         marginBottom: "10px"}}/>
                         <div>{item.skills}</div>
