@@ -93,7 +93,7 @@ function App() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Dropdown show={dropdownOpen} align="end" onToggle={toggleDropdown}>
-                <Dropdown.Toggle variant="Secondary" id="dropdown-icon-button">
+                <Dropdown.Toggle variant="Secondary" id="dropdown-icon-button" style={{ fontSize: "30px" }}>
                 <FontAwesomeIcon icon={faBars} />
                 </Dropdown.Toggle>
                 <Dropdown.Menu>

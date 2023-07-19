@@ -8,30 +8,58 @@
   flex-direction: column;
   color: black;
    margin-top: 50px; 
+   
 }
  @media (max-width: 900px){
   .how-do-container{
     margin-top: 10px; 
-
   }
-    /* .how-do-container{
-        margin-top: 90px;
-    } */
-
 }
 .how-do-title{
     font-weight: bold;
+    position:absolute;
+  top: 630px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 .monitor-img{
+  margin-top: 30px;
+    margin-bottom: 20px;
+    width: 50%;
+    height: auto;
+    position: relative;
+    top: 30px;
+    transform: translateX(-50%);
+    z-index: 1;
+    left: 25%;
+    
+    /*background-image: url("../image/Index_TV.png");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size:contain;*/
+    /*background-position: center center;*/
+    /*position: relative;/*/
+}@media (min-width: 1200px) {
+  monitor-img{
     margin-bottom: 10px;
     width: 70%;
     height: auto;
-    background-image: url("../image/Index_TV.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
     position: relative;
+    top: 3000px;}
 }
+.do-subtitle{
+  position:absolute;
+  top: 750px;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: top 0.3s ease-in-out;
+}@media(max-width: 900px){
+  .do-subtitle{
+    top: 760px;
+  }
+}
+
+
 .skill-image {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
@@ -39,3 +67,4 @@
   .skill-image.show {
     opacity: 1;
   }
+/*  */

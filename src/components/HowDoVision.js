@@ -1,5 +1,5 @@
 import '../components/HowDoVision.css';
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import ReactDOM from 'react-dom'
 
 //import ImageSrc from '../image/Index_TV.png';
@@ -13,7 +13,6 @@ import OKNGImage from '../image/OKNG.jpg';
 import InspectionImage from '../image/inspec.jpg';
 import VisionScanImage from '../image/vision.png';
 
-
 const HowDoVision = (props) =>{
     const howWords = [{
         title: "비전검사기로 어떤 것을 할 수 있나요?",
@@ -22,7 +21,20 @@ const HowDoVision = (props) =>{
 
       const [selectedIcon, setSelectedIcon] = useState(null);
       const [imageSrc, setImageSrc] = useState(null);
+      const [isMobileView, setIsMobileView] = useState(false);
 
+      useEffect(() => {
+        const handleResize = () => {
+          setIsMobileView(window.innerWidth <= 1400);
+        };
+    
+        handleResize(); // Check initial screen width
+    
+        window.addEventListener("resize", handleResize);
+        return () => {
+          window.removeEventListener("resize", handleResize);
+        };
+      }, []);
 
     const visionSkills = [
         {
@@ -55,12 +67,27 @@ const HowDoVision = (props) =>{
         setImageSrc(src);
       };
 
+      const getTitle = (title) => {
+        if (isMobileView) {
+          const firstLine = "비전검사기로";
+          const secondLine = "어떤 것을 할 수 있나요?";
+          return (
+            <>
+              {firstLine}
+              <br />
+              {secondLine}
+            </>
+          );
+        }
+        return title;
+      };
+
     return(
         <div className='how-do-container' >
             {howWords.map((word,index) => (
           <div key={index}>
-            <h1 className='how-do-title'>{word.title}</h1>
-            <pre>{word.subtitles}</pre>
+            <h1 className='how-do-title'>{getTitle(word.title)}</h1>
+            <pre className='do-subtitle'>{word.subtitles}</pre>
           </div>
         ))}
             <div className='monitor-img'>
@@ -71,7 +98,7 @@ const HowDoVision = (props) =>{
               width: "50%",
               height: "auto",
               position: "absolute",
-              top: "calc(50% - 30px)",
+              top: "calc(50% - 22px)",
               left: "50%",
               transform: "translate(-50%, -50%)",
             }}
@@ -90,11 +117,11 @@ const HowDoVision = (props) =>{
 
                         <FontAwesomeIcon 
                         icon={ item.icon } 
-                        size='3x' 
+                        size={isMobileView >= 1200 ? "2x" : "3x"} 
                         // style={{color:'rgb(107, 77, 108)', 
                         style={{color:'rgb(0,0,0)', 
                         cursor: 'pointer', 
-                        marginBottom: "10px"}}/>
+                        marginBottom: "10px",marginTop:"30px"}}/>
                         <div>{item.skills}</div>
                         
                         </div>
