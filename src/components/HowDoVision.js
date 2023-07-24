@@ -119,7 +119,7 @@ const HowDoVision = (props) =>{
                         icon={ item.icon } 
                         size={isMobileView >= 1200 ? "2x" : "3x"} 
                         // style={{color:'rgb(107, 77, 108)', 
-                        style={{color:'rgb(0,0,0)', 
+                        style={{color:'rgb(107, 77, 108)', 
                         cursor: 'pointer', 
                         marginBottom: "10px",marginTop:"30px"}}/>
                         <div>{item.skills}</div>

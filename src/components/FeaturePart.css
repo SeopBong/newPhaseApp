@@ -1,9 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
+
 .icon-container{
-    display: flex;
-    align-items: center;
+  display: flex;
+  justify-content: center; /* Horizontally center the items */
+  flex-wrap: wrap; /* 아이콘이 너무 많을 경우 줄 바꿈 처리 */
+  gap: 100px;
+  transition: all 3s ease
+}@media screen and (max-width: 1200px) {
+    .icon-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
 }
 .icon{
-    margin-left: 15px;
-    align-items: center;
+    position: relative; /* 포지션을 상대적으로 설정합니다. */
+}
+
+.explan{
+    font-weight: bold;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.add-use{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+.img-container {
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 요소들을 세로 중앙 정렬 */
+    justify-content: center; /* 요소들을 가로 중앙 정렬 */
+    transition: all 0.5s ease;
+  }
+.img-brain{
+    padding-top: 40px;
+    /*width: 50%;*/
+    max-width: 800px;
+    display: block;
+    margin-left: -50px;
+    transition: all 0.5s ease;
+}@media  screen and (max-width: 1200px) {
+    .img-brain{
+        max-width: 500px;
+        padding-left: 30px;
+    }
+}
+@media  screen and (max-width: 900px) {
+    .img-brain{
+        max-width: 300px;
+        padding-left: 30px;
+    }
+}
+.img-container-words{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold;
+
 
 }
+.img-container-words-add{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    justify-content: Left; /* 요소들을 가로 중앙 정렬 */
+
+}
+
+
+@media screen and (max-width: 800px) {
+    .img-container {
+      flex-direction: column;
+    }
+  
+    .img-brain {
+      margin-left: 0; /* 이미지 왼쪽 마진 제거 */
+    }
+  
+    .img-container-words,
+    .img-container-words-add {
+      text-align: center; /* 텍스트 가운데 정렬 */
+    }
+  
+    .img-container-words-add {
+      margin-top: 10px; /* 텍스트들 사이의 간격 조정 */
+    }
+  }
+
+  .icon-add-word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .icon-add-word > div {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon-span-word {
+    margin-left: 10px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+  }

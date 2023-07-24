@@ -20,6 +20,7 @@ function App() {
   const howDoVisionRef  = useRef(null);
   const navbarRef = useRef(null);
   const [isDropdown, setIsDropdown] = useState(false);
+  const featurePartRef = useRef(null);
 
 
   //***************************useEffect 이벤트 Scroll이 조금이라도 내려가면 Navbar 색상 변경 보라->Dark********************************************************************* */
@@ -58,6 +59,10 @@ function App() {
   //************************************************************************************************ */
   //***************************HOME 버튼 클릭시 Scroll 제일 상단 position으로 이동********************************************************************* */
   const scrollToTop = () => {
+    if (isDropdown) {
+      setIsDropdown(false);
+      
+    }
     if (pageTopRef.current) {
       pageTopRef.current.scrollIntoView({ behavior: 'smooth' });
     }
@@ -71,8 +76,20 @@ function App() {
 
       window.scrollTo({ top: topOffset, behavior: 'smooth' });
     }
+    
   };
   //*************************************************************************************************/
+   // **********************************FEATURE 버튼 클릭시 howDoVisionRef 위치로 이동***********************************/
+   const scrollToFeaturePart = () => {
+    if (featurePartRef.current) {
+      const navbarHeight = navbarRef.current.offsetHeight;
+      const topOffset = featurePartRef.current.offsetTop - navbarHeight - 40;
+
+      window.scrollTo({ top: topOffset, behavior: 'smooth' });
+    }
+  };
+  // ************************************************************************************************/
+
   //**********************************드롭 박스***************************************************************/
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -99,7 +116,7 @@ function App() {
                 <Dropdown.Menu>
                 <Dropdown.Item onClick={scrollToTop}>HOME</Dropdown.Item>
                 <Dropdown.Item onClick={scrollToHowDoVision}>ABOUT</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">FEATURE</Dropdown.Item>
+                <Dropdown.Item onClick={scrollToFeaturePart}>FEATURE</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">PROCESS</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">PRICING</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">REVIEW</Dropdown.Item>
@@ -117,7 +134,7 @@ function App() {
           <Nav className="me-auto">
               <Nav.Link onClick={scrollToTop}>HOME</Nav.Link>
               <Nav.Link onClick={scrollToHowDoVision}>ABOUT</Nav.Link>
-              <Nav.Link href="#pricing">FEATURE</Nav.Link>
+              <Nav.Link onClick={scrollToFeaturePart}>FEATURE</Nav.Link>
               <Nav.Link href="#features">PROCESS</Nav.Link>
               <Nav.Link href="#features">PRICING</Nav.Link>
               <Nav.Link href="#features">REVIEW</Nav.Link>
@@ -127,14 +144,15 @@ function App() {
         </Navbar>
       )}
       <div ref={pageTopRef}>
-        </div>
-        
+        </div>  
         <IntroContainer />
           <div ref={howDoVisionRef}>
         <HowDoVision />
           </div>
           <RestPart />
+          <div ref={featurePartRef}>
           <FeaturePart />
+          </div>
         </div>
   </div>
       
