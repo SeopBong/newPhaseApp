@@ -5,14 +5,19 @@
   justify-content: center; /* Horizontally center the items */
   flex-wrap: wrap; /* 아이콘이 너무 많을 경우 줄 바꿈 처리 */
   gap: 100px;
-  transition: all 3s ease
+  transition: all 2s ease
 }@media screen and (max-width: 1200px) {
     .icon-container{
         flex-direction: column;
         align-items: center;
-        gap: 100px;
+        gap: 30px;
     }
-}
+}@media screen and (min-width: 768px) {
+    .icon-container {
+      gap: 10px; /* Reduce the gap for larger screens */
+    }
+  }
+
 .icon{
     position: relative; /* 포지션을 상대적으로 설정합니다. */
 }
@@ -28,7 +33,7 @@
     display: flex; /* Flexbox 사용 */
     align-items: center; /* 요소들을 세로 중앙 정렬 */
     justify-content: center; /* 요소들을 가로 중앙 정렬 */
-    transition: all 0.5s ease;
+    transition: all 2s ease;
   }
 .img-brain{
     padding-top: 40px;

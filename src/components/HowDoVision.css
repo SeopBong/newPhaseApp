@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
+
 .how-do-container{
     background-color: white;
   height: 900px;
@@ -22,6 +24,8 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+
 }
 .monitor-img{
   margin-top: 30px;
@@ -49,16 +53,21 @@
 }
 .do-subtitle{
   position:absolute;
-  top: 750px;
+  top: 710px;
   transform: translateX(-50%);
   z-index: 1;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+
   transition: top 0.3s ease-in-out;
-}@media(max-width: 900px){
+}@media(max-width: 1500px){
   .do-subtitle{
     top: 760px;
   }
 }
+.skill-array{
+  font-family: 'IBM Plex Sans KR', sans-serif;
 
+}
 
 .skill-image {
     opacity: 0;

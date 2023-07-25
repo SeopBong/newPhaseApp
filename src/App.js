@@ -8,6 +8,8 @@ import IntroContainer from './components/IntroContainer';
 import HowDoVision from './components/HowDoVision';
 import RestPart from './components/RestPart';
 import FeaturePart from './components/FeaturePart';
+import ProcessPart from './components/ProcessPart';
+
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -79,7 +81,7 @@ function App() {
     
   };
   //*************************************************************************************************/
-   // **********************************FEATURE 버튼 클릭시 howDoVisionRef 위치로 이동***********************************/
+   // **********************************FEATURE 버튼 클릭시 featureRef 위치로 이동***********************************/
    const scrollToFeaturePart = () => {
     if (featurePartRef.current) {
       const navbarHeight = navbarRef.current.offsetHeight;
@@ -153,6 +155,8 @@ function App() {
           <div ref={featurePartRef}>
           <FeaturePart />
           </div>
+        <ProcessPart />
+
         </div>
   </div>
       
