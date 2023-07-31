@@ -1,107 +1,87 @@
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
-/*
-.pro-container{
-    background-color: black;
-  min-height: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.circular-button{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90px; /* 원하는 너비 설정 (필요에 따라 조정) */
-  /*height: 90px; /* 원하는 높이 설정 (필요에 따라 조정) */
-  /*border-radius: 50%;
-  background-color: rgb(148, 144, 148); /* 원하는 배경색 설정 (필요에 따라 조정) */
- /* color: #fff; /* 아이콘 색상 설정 (필요에 따라 조정) */
- /* border: none;
-  outline: none;
-  cursor: pointer;
-  margin: 50px;
-  transition: background-color 0.3s;
-  position: relative;
-} */
 
 .process-section {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.process-container {
   background-color: black;
   height: 550px;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
+  gap: 80px;
 }
 
-.process-container {
+.process-container > div {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  align-items: column;
+  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.process-item {
-  text-align: center;
-  margin-right: 100px;
+.process-container > div:hover {
+  transform: scale(1.1);
 }
-.circular-button-container {
-  position: relative; /* 자식 요소의 위치를 상대적으로 설정합니다 */
-}
-
 
 .circular-button {
+  margin-top: 50px;
   border: 2px solid #fff;
   border-radius: 50%;
   background-color: #9c9999;
   width: 100px;
-  height: 100px;
+  height: 100px; /* 버튼의 높이를 100px로 설정합니다. */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: all 0.3s;
-}
+  position: relative; /* 버튼의 위치를 상대적으로 설정합니다. */
 
+}
 .circular-button.selected {
   background-color: rgb(107, 77, 108);
-  color: #fff;
 }
 
-.circular-button.selected h1 {
+.process-container > div.selected {
   color: #fff;
+  transform: scale(1.2);
 }
-
-.title-container {
-  font-size: 14px;
-  margin-top: 10px;
-  line-height: 1.2;
+.title-words{
   font-family: 'IBM Plex Sans KR', sans-serif;
-
-}
-
-.explanation-container {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #333;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  position: absolute; /* 절대적 위치 설정 */
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.2;
+  white-space: normal; /* 여러 줄을 허용합니다. */
+  width: 200px;
+  position: absolute; /* 타이틀의 위치를 절대적으로 설정합니다. */
+  top: 110px; /* 버튼 아래로 30px 이동시킵니다. */
   left: 50%; /* 가로 방향 중앙 정렬 */
   transform: translateX(-50%); /* 가로 방향으로 중앙 정렬 */
-  z-index: 1; /* 점선보다 위에 위치하도록 설정 */
-  display: none; /* 초기에는 내용을 감추도록 설정 */
-}
-.process-item:hover .explanation-container {
-  display: block; /* 버튼에 호버 시 내용 표시 */
+  text-align: center; /* 가운데 정렬을 위해 필요합니다. */
 }
 
-.dot-line {
+.process-container .dot-line {
   position: absolute;
   top: 50%;
   left: 100%;
-  right: -70px; /* 버튼의 크기(100px) + 간격(120px) / 2 */
-  width: 140px; /* 점선의 길이를 간격의 2배로 설정합니다 */
+  right: -70px;
+  width: 140px;
   height: 1px;
   border: 1px dashed #fff;
+}
+
+
+.explanation-container {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.explanation-container.active {
+  opacity: 1;
+  pointer-events: auto;
 }
