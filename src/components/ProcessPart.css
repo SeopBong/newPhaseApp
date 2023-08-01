@@ -11,6 +11,7 @@
   height: 550px;
   display: flex;
   justify-content: center;
+  position: relative;
   width: 100%;
   gap: 80px;
 }
@@ -73,15 +74,19 @@
   height: 1px;
   border: 1px dashed #fff;
 }
-
-
 .explanation-container {
+  font-family: 'IBM Plex Sans KR', sans-serif;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-}
+  position: absolute; /* 설명 부분을 절대적으로 정렬 */
+  top: calc(100% + 150px);
+  left: 50%;
+  width: 500px;
+  transform: translate(-50%, -50%); /* 가로, 세로 방향으로 모두 중앙 정렬 */
+  background-color: rgba(228, 220, 220, 0.8); /* 배경 색상 추가 */
+  padding: 15px; /* 내용과의 간격을 위해 패딩 추가 */
+  border-radius: 5px; /* 모서리 둥글게 처리 */
+  z-index: 1;
 
-.explanation-container.active {
-  opacity: 1;
-  pointer-events: auto;
 }

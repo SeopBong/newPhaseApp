@@ -77,13 +77,16 @@ const ProcessPart = () => {
                     </span>
                   ))}
               </div>
-             
+              {selectedId === item.id && ( // 선택된 버튼의 ID와 현재 버튼의 ID가 일치할 때만 설명 표시
+                <div className={`explanation-container ${selectedId === item.id ? 'active' : ''}`}>
+                  {item.addExplanation} {/* addExplanation 값을 출력 */}
+                </div>
+              )}
            </div>
            
           );
         })}
-        <div className='explanation-container'>
-              </div>
+  
       </div>
     </section>
 )};
