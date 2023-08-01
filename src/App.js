@@ -23,6 +23,7 @@ function App() {
   const navbarRef = useRef(null);
   const [isDropdown, setIsDropdown] = useState(false);
   const featurePartRef = useRef(null);
+  const processPartRef = useRef(null);
 
 
   //***************************useEffect 이벤트 Scroll이 조금이라도 내려가면 Navbar 색상 변경 보라->Dark********************************************************************* */
@@ -91,6 +92,16 @@ function App() {
     }
   };
   // ************************************************************************************************/
+ // **********************************FEATURE 버튼 클릭시 processPartRef 위치로 이동***********************************/
+ const scrollToProcessPart = () => {
+  if (processPartRef.current) {
+    const navbarHeight = navbarRef.current.offsetHeight;
+    const topOffset = processPartRef.current.offsetTop - navbarHeight - 40;
+
+    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+  }
+};
+// ************************************************************************************************/
 
   //**********************************드롭 박스***************************************************************/
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -119,7 +130,7 @@ function App() {
                 <Dropdown.Item onClick={scrollToTop}>HOME</Dropdown.Item>
                 <Dropdown.Item onClick={scrollToHowDoVision}>ABOUT</Dropdown.Item>
                 <Dropdown.Item onClick={scrollToFeaturePart}>FEATURE</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">PROCESS</Dropdown.Item>
+                <Dropdown.Item onClick={scrollToProcessPart}>PROCESS</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">PRICING</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">REVIEW</Dropdown.Item>
                 <Dropdown.Item href="#/action-3">CONTECT</Dropdown.Item>
@@ -137,7 +148,7 @@ function App() {
               <Nav.Link onClick={scrollToTop}>HOME</Nav.Link>
               <Nav.Link onClick={scrollToHowDoVision}>ABOUT</Nav.Link>
               <Nav.Link onClick={scrollToFeaturePart}>FEATURE</Nav.Link>
-              <Nav.Link href="#features">PROCESS</Nav.Link>
+              <Nav.Link onClick={scrollToProcessPart}>PROCESS</Nav.Link>
               <Nav.Link href="#features">PRICING</Nav.Link>
               <Nav.Link href="#features">REVIEW</Nav.Link>
               <Nav.Link href="#features">CONTECT</Nav.Link>
@@ -155,7 +166,9 @@ function App() {
           <div ref={featurePartRef}>
           <FeaturePart />
           </div>
+        <div ref={processPartRef}>
         <ProcessPart />
+        </div>
 
         </div>
   </div>
