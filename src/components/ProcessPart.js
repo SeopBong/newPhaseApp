@@ -1,5 +1,6 @@
 import './ProcessPart.css';
 import React,{useState, useEffect} from 'react';
+import ProcessExp from '../components/ProcessExp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
@@ -39,26 +40,22 @@ const ProcessPart = () => {
         const [selectedId, setSelectedId] = useState(null);
         const [selectedExplan, setSelectedExplan] = useState(null);
 
-        
         const handleButtonClick = (id) => {
           setSelectedId(id === selectedId ? null : id);
           setSelectedExplan(id === selectedId ? null : id)
         };
-      
 
     return (
         <section className="process-section">
       <div className="process-container">
+      
         {processApps.map((item, index) => {
            const titleLines = item.title.split('\n');
-
           return (
-            //<div key={item.id} onClick={()=>handleButtonClick(item.icon, item.title, item.addExplanation)}>
             <div
               key={item.id}
               className={`circular-button ${selectedId === item.id ? 'selected' : ''}`}
               onClick={() => handleButtonClick(item.id)}
-              
             > 
             <FontAwesomeIcon
               icon={item.icon} 
@@ -67,27 +64,26 @@ const ProcessPart = () => {
                 cursor: 'pointer', 
                 marginBottom: "15px",marginTop:"15px"}} 
               />
-              
               <div className='title-words'>
               {titleLines.map((line, index) => (
                     // 각 줄의 내용을 span 태그로 감싸서 줄바꿈 처리
                     <span key={index}>
                       {line}
                       {index !== titleLines.length - 1 && <br />}
+
                     </span>
                   ))}
               </div>
-              {selectedId === item.id && ( // 선택된 버튼의 ID와 현재 버튼의 ID가 일치할 때만 설명 표시
-                <div className={`explanation-container ${selectedId === item.id ? 'active' : ''}`}>
-                  {item.addExplanation} {/* addExplanation 값을 출력 */}
-                </div>
-              )}
-           </div>
-           
+            </div>
+        
           );
         })}
-  
+        
+        <div className='anather'>{selectedExplan && (
+          <ProcessExp explanation={processApps.find(item => item.id === selectedExplan)?.addExplanation} />
+        )}</div>
       </div>
+
     </section>
 )};
 

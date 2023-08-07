@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
+
+.explan-container {
+    background-color: black;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    color: #fff;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+  }
+  .Exp{
+    color: #fff;
+  }

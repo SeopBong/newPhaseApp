@@ -9,7 +9,7 @@ import HowDoVision from './components/HowDoVision';
 import RestPart from './components/RestPart';
 import FeaturePart from './components/FeaturePart';
 import ProcessPart from './components/ProcessPart';
-
+import ProcessExp from './components/ProcessExp';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +24,7 @@ function App() {
   const [isDropdown, setIsDropdown] = useState(false);
   const featurePartRef = useRef(null);
   const processPartRef = useRef(null);
-
+  //해당 위치는 프로세스와 같은 파트임
 
   //***************************useEffect 이벤트 Scroll이 조금이라도 내려가면 Navbar 색상 변경 보라->Dark********************************************************************* */
   useEffect(() => {
@@ -102,7 +102,7 @@ function App() {
   }
 };
 // ************************************************************************************************/
-
+ 
   //**********************************드롭 박스***************************************************************/
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -168,7 +168,10 @@ function App() {
           </div>
         <div ref={processPartRef}>
         <ProcessPart />
+        <ProcessExp />
         </div>
+        
+         
 
         </div>
   </div>
