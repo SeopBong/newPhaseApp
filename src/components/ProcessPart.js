@@ -40,9 +40,9 @@ const ProcessPart = () => {
         const [selectedId, setSelectedId] = useState(null);
         const [selectedExplan, setSelectedExplan] = useState(null);
 
-        const handleButtonClick = (id) => {
+        const handleButtonClick = (id,addExplanation) => {
           setSelectedId(id === selectedId ? null : id);
-          setSelectedExplan(id === selectedId ? null : id)
+          setSelectedExplan(id === selectedId ? null : addExplanation)
         };
 
     return (
@@ -51,11 +51,12 @@ const ProcessPart = () => {
       
         {processApps.map((item, index) => {
            const titleLines = item.title.split('\n');
+           
           return (
             <div
               key={item.id}
               className={`circular-button ${selectedId === item.id ? 'selected' : ''}`}
-              onClick={() => handleButtonClick(item.id)}
+              onClick={() => handleButtonClick(item.id, item.addExplanation)} // 가지고 올 아이템을 더 가져와서 뿌려주는게 핵심
             > 
             <FontAwesomeIcon
               icon={item.icon} 
@@ -78,9 +79,12 @@ const ProcessPart = () => {
           );
         })}
       </div>
-      <div className='another'>
-          {selectedExplan && <ProcessExp addExplanation={selectedExplan} />}
+
+      {selectedExplan && (
+        <div className='another'>
+          <ProcessExp addExplanation={selectedExplan} />
         </div>
+        )}
     </section>
 )};
 

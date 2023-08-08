@@ -2,7 +2,7 @@
 
 .explan-container {
     background-color: black;
-    height: 250px;
+    height: 50px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -13,4 +13,6 @@
   }
   .Exp{
     color: #fff;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    white-space:pre-wrap
   }
