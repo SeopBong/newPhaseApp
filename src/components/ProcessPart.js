@@ -70,7 +70,6 @@ const ProcessPart = () => {
                     <span key={index}>
                       {line}
                       {index !== titleLines.length - 1 && <br />}
-
                     </span>
                   ))}
               </div>
@@ -78,12 +77,10 @@ const ProcessPart = () => {
         
           );
         })}
-        
-        <div className='anather'>{selectedExplan && (
-          <ProcessExp explanation={processApps.find(item => item.id === selectedExplan)?.addExplanation} />
-        )}</div>
       </div>
-
+      <div className='another'>
+          {selectedExplan && <ProcessExp addExplanation={selectedExplan} />}
+        </div>
     </section>
 )};
 
