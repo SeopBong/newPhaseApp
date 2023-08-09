@@ -2,7 +2,7 @@
 
 .icon-container{
   display: flex;
-  justify-content: center; /* Horizontally center the items */
+  justify-content: space-between; /* Horizontally center the items */
   flex-wrap: wrap; /* 아이콘이 너무 많을 경우 줄 바꿈 처리 */
   gap: 100px;
   transition: all 2s ease
@@ -10,13 +10,16 @@
     .icon-container{
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        transition: all 0.5s ease;
+
+        /*gap: 30px;*/
     }
 }@media screen and (min-width: 768px) {
     .icon-container {
       gap: 10px; /* Reduce the gap for larger screens */
     }
   }
+
 
 .icon{
     position: relative; /* 포지션을 상대적으로 설정합니다. */

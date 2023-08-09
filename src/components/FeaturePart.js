@@ -52,7 +52,7 @@ return(
           <div
             key={item.id}>
             <FontAwesomeIcon icon={item.icon}
-            size={"4x"}
+            size={ window.innerWidth <= 900 ? "2x" : "4x"}
             style ={{
                 marginBottom: "10px",marginTop:"30px", color: "rgb(107, 77, 108)"
             }} />
@@ -69,7 +69,7 @@ return(
             <div className='icon-add-word'>
               {iconAdd.map((items, idx) => (
                 <div key={items.id}>
-                  <FontAwesomeIcon icon={items.icons}  size={"2x"} style ={{
+                  <FontAwesomeIcon icon={items.icons}  size={"x4"} style ={{
                 marginBottom: "5px",marginTop:"5px", color: "rgb(107, 77, 108)"
             }} />
             <span className='icon-span-word'>{items.addExplanation}</span>

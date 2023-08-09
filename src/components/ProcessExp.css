@@ -2,13 +2,21 @@
 
 .explan-container {
     background-color: black;
-    height: 50px;
+    height: 75px;
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
     color: #fff;
     font-family: 'IBM Plex Sans KR', sans-serif;
+    align-items: center;
+    transition: all 0.5s ease;
+
+  }
+  .title{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: bold;
+    transition: all 0.5s ease;
 
   }
   .Exp{
