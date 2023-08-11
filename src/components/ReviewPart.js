@@ -7,7 +7,7 @@ const ReviewPart = (props) => {
     
     return (
         <div className='review-container'>
-            <FontAwesomeIcon icon={faCommentDots} size={"x4"} />
+            <FontAwesomeIcon icon={faCommentDots} size="4x" />
             </div>
         
     );
