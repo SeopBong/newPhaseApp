@@ -10,7 +10,7 @@ const PricingPart =(props)=>{
             id: 'L1',
             title: 'STANDARD',
             subTitle: '기본 검사위주의 단순형',
-            price: '2,500 만원',
+            price: '2,500',
             data1: '기본적인 검증 알고리즘',
             data2: '수동 로딩/언로딩 방식',
             data3: '카메라 단순 촬영방식 검증',
@@ -20,7 +20,7 @@ const PricingPart =(props)=>{
             id: 'L2',
             title: 'ENTERPRISE',
             subTitle: '정밀 검사용 /IoT 적용타입',
-            price: '5,500 만원',
+            price: '5,500',
             data1: '기본적인 검증 알고리즘',
             data2: '수동 로딩/언로딩 방식',
             data3: '카메라 단순 촬영방식 검증',
@@ -46,10 +46,17 @@ const PricingPart =(props)=>{
             {contentData.map((item) => (
                     // <div key={item.id} className='content-box'>
                         <div key={item.id} 
-                        className={`content-box ${item.id === 'L2' ? 'red-border' : ''}`}>
+                        className={`content-box ${item.id === 'L2' ? 'red-border' : ''}`}>  {/** id가 L2라면 빨간색 테두리 css를 입힌다. */}
                         <h3 className='main'>{item.title}</h3>
                         <p>{item.subTitle}</p>
-                        <p style={{fontSize:'45px',fontWeight:'bolder'}}>{item.price}</p>
+                        <p style={{fontSize:'45px',fontWeight:'bolder'}}>
+                            {item.price === '별도견적' ? '별도견적' : (
+                            <span>
+                        {item.price.replace('만원', '')}
+                        <span style={{ fontSize: '14px' }}>만원</span>
+                        </span>
+                        )}
+                        </p>
                         <ul>
                             <li>{item.data1}</li>
                             <li>{item.data2}</li>

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
+
+.review-container{
+    padding-top: 10px;
+    background-color: black;
+    height: 350px;
+    color: #fff;
+}

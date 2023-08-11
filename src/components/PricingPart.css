@@ -2,12 +2,14 @@
 
 
 .pricing-container{
-    padding-top: 10px;
+    padding-top: 20px;
     background-color: rgb(114, 111, 111);
-    height: 650px;
+    min-height: 650px;
     font-family: 'IBM Plex Sans KR', sans-serif;
+    transition: all 2s ease;
+    flex-wrap: wrap; /* 아이콘이 너무 많을 경우 줄 바꿈 처리 */
 
-}
+} 
 .content-title{
     font-weight: bolder;
     white-space:pre-wrap;
@@ -17,10 +19,14 @@
 .content-part{
     justify-content: center;
     display: flex;
+    flex-wrap: wrap; /* 요소들이 너비를 벗어나면 아래 줄로 내려갑니다. */
+    align-items: flex-start; /* 요소들을 위쪽 정렬합니다. */
+    margin-top: 20px; /* 필요한 여백을 조절하세요. */
 
 }
 
 .content-box{
+    width: calc(33.33% - 20px); /* 요소들의 너비를 1/3로 설정하고 간격을 제거합니다. */
     background-color: #fff;
     margin: 10px;
     padding: 90px;
@@ -31,4 +37,17 @@
 }
 .red-border {
     border: 2px solid red;
+}
+
+@media screen and (max-width:900px){
+    .content-part{
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+    .content-box{
+        width: 60%; /* 조절 가능한 영역 너비 */
+        margin: 10px auto;
+        padding: 30px;
+    }
 }
