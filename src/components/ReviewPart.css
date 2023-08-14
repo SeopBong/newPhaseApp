@@ -1,8 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=IBM+Plex+Sans+KR:wght@300;600;700&family=Noto+Sans+KR:wght@700&display=swap');
 
-.review-container{
+
+.review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     padding-top: 10px;
     background-color: black;
     height: 350px;
     color: #fff;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
 }
+
+.comment-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.comment-item.selected {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-animation {
+    animation: slide 5s infinite;
+} 
+ 

@@ -57,7 +57,7 @@ const PricingPart =(props)=>{
                         </span>
                         )}
                         </p>
-                        <ul>
+                        <ul className='line'>
                             <li>{item.data1}</li>
                             <li>{item.data2}</li>
                             <li>{item.data3}</li>
