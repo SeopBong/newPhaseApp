@@ -12,6 +12,7 @@ import ProcessPart from './components/ProcessPart';
 import ProcessExp from './components/ProcessExp';
 import PricingPart from './components/PricingPart';
 import ReviewPart from './components/ReviewPart';
+import Contect from './components/Contect';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -28,6 +29,7 @@ function App() {
   const processPartRef = useRef(null);
   const pricingPartRef = useRef(null);
   const reviewPartRef = useRef(null);
+  const ContectRef = useRef(null);
 
   //해당 위치는 프로세스와 같은 파트임
 
@@ -127,6 +129,16 @@ const scrollToReviewPart = () => {
   }
 };
 // ************************************************************************************************/
+// **********************************FEATURE 버튼 클릭시 PricingPartRef 위치로 이동***********************************/
+const scrollToContect = () => {
+  if (ContectRef.current) {
+    const navbarHeight = navbarRef.current.offsetHeight;
+    const topOffset = ContectRef.current.offsetTop - navbarHeight - 40;
+
+    window.scrollTo({ top: topOffset, behavior: 'smooth' });
+  }
+};
+// ************************************************************************************************/
  
   //**********************************드롭 박스***************************************************************/
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -158,7 +170,7 @@ const scrollToReviewPart = () => {
                 <Dropdown.Item onClick={scrollToProcessPart}>PROCESS</Dropdown.Item>
                 <Dropdown.Item onClick={scrollToPricingPart}>PRICING</Dropdown.Item>
                 <Dropdown.Item onClick={scrollToReviewPart}>REVIEW</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">CONTECT</Dropdown.Item>
+                <Dropdown.Item onClick={scrollToContect}>CONTECT</Dropdown.Item>
                 </Dropdown.Menu>
         </Dropdown>
             </Nav>
@@ -176,7 +188,7 @@ const scrollToReviewPart = () => {
               <Nav.Link onClick={scrollToProcessPart}>PROCESS</Nav.Link>
               <Nav.Link onClick={scrollToPricingPart}>PRICING</Nav.Link>
               <Nav.Link onClick={scrollToReviewPart}>REVIEW</Nav.Link>
-              <Nav.Link href="#features">CONTECT</Nav.Link>
+              <Nav.Link onClick={scrollToContect}>CONTECT</Nav.Link>
           </Nav>
           </Container>
         </Navbar>
@@ -201,7 +213,9 @@ const scrollToReviewPart = () => {
         <div ref={reviewPartRef}>
           <ReviewPart />
         </div>
-        
+        <div ref={ContectRef}>
+        <Contect />
+        </div>
          
 
         </div>
