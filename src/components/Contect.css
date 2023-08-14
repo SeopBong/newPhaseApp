@@ -9,6 +9,12 @@
 .data-container{
     display: flex;
     justify-content: center;
+    transition: all 0.5s ease;
+
+    @media (max-width: 900px){
+        flex-direction: column;
+        align-items: center;
+    }
 }
 .contect-box{
     width: 250px; /* 요소들의 너비를 1/3로 설정하고 간격을 제거합니다. */
@@ -16,12 +22,14 @@
     margin: 10px;
     padding: 30px;
     border: 2px solid #b7b4b8;
+    border-radius: 10px;
 }
 .main-text{
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-weight: 800;
     font-size: 35px;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 .use-text{
     font-family: 'IBM Plex Sans KR', sans-serif;
@@ -29,6 +37,20 @@
     font-size: 20px;
 }
 .more-text{
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+}
+.map-container{
+    
+}
+
+.the-end{
+    padding-top: 15px;
+    height: 50px;
+    background-color: black;
+    color: #fff;
+    justify-content: center;
+    font-size: 10px;
     font-family: 'IBM Plex Sans KR', sans-serif;
 
 }

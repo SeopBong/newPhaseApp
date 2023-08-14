@@ -47,7 +47,8 @@ const Contect = () => {
                 </div>
             ))}
             </div>
-           
+           <div className='map-container'>구글맵</div>
+           <div className='the-end'>© 2023. NEWPHASE. ALL RIGHT RESERVED.</div>
         </div>
     )
 }
