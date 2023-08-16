@@ -37,7 +37,8 @@
     transform: translateX(-50%);
     z-index: 1;
     left: 25%;
-    
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
     /*background-image: url("../image/Index_TV.png");*/
     /*background-repeat: no-repeat;*/
     /*background-size:contain;*/
@@ -51,6 +52,8 @@
     position: relative;
     top: 3000px;}
 }
+
+
 .do-subtitle{
   position:absolute;
   top: 710px;
@@ -70,7 +73,7 @@
 }
 
 .skill-image {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease-in-out;
   }
   .skill-image.show {

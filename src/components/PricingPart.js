@@ -34,7 +34,7 @@ const PricingPart =(props)=>{
             data1: '비전검사 자동화 시스템',
             data2: 'SMART FACTORY 구축',
             data3: '기업 맞춤형 IoT 솔루션',
-            data4: '기업 맞춤형 IoT 솔루션',
+            data4: '솔루션 개선 및 유지보수',
         },
     ]
 

@@ -91,9 +91,9 @@ const HowDoVision = (props) =>{
           </div>
         ))}
             <div className='monitor-img'>
-            <img src={IndexTVImage} style={{ width: "100%", height: "auto" }} />
+            <img src={IndexTVImage} style={{ width: "100%", height: "auto"}} />
              {imageSrc && (
-          <img src={imageSrc}
+          <img className='skill-image' src={imageSrc}
             style={{
               width: "50%",
               height: "auto",

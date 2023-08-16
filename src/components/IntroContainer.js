@@ -1,8 +1,7 @@
 import './IntroContainer.css';
 import React from 'react';
-import YouTube from 'react-youtube';
 import ReactPlayer from 'react-player'
-
+import MainBanners from '../image/Liquid Lens diagram.jpg'
 
 const IntroContainer = (props) =>{
 
@@ -13,14 +12,18 @@ const IntroContainer = (props) =>{
 
    return(
        <div className="intro-container">
-   
-     <ReactPlayer className="player"
-     url={"https://www.youtube.com/watch?v=b-0GYIMmm1Q"}
-       loop={false}
-       playing={false}
-       muted={true}
-     controls={true}
-   />
+        
+        {/* <iframe className='player'
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/b-0GYIMmm1Q"
+          title="YouTube video player"
+          frameborder="0"
+          allowfullscreen
+        ></iframe> */}
+
+        <img className='main-banner' src={MainBanners}></img>
+
      <div className='intro-words'>
        {introWords.map((word,index) => (
          <div key={index}>
