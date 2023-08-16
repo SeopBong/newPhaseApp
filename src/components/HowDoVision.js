@@ -8,33 +8,21 @@ import { faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faMagnifyingGlassPlus } from '@fortawesome/free-solid-svg-icons';
 
-import IndexTVImage from '../image/Index_TV.png';
+import IndexTVImage from '../image/index_Monitor.jpg';
 import OKNGImage from '../image/OKNG.jpg';
 import InspectionImage from '../image/inspec.jpg';
 import VisionScanImage from '../image/vision.png';
 
 const HowDoVision = (props) =>{
-    const howWords = [{
-        title: "비전검사기로 어떤 것을 할 수 있나요?",
-        subtitles: "비전검사는 제품을 촬영하여 영상분석기술을 이용해\n검사하는 장비로 사람 눈으로 구분이 가능한 모든 불량부터\n사람눈으로 어려운 정밀 불량까지 모두 검출할 수 있습니다."
-      }];
+    
+      const title =  "비전검사기로 어떤 것을 할 수 있나요?";
+      const subtitles = "비전검사는 제품을 촬영하여 영상분석기술을 이용해\n검사하는 장비로 사람 눈으로 구분이 가능한 모든 불량부터\n사람눈으로 어려운 정밀 불량까지 모두 검출할 수 있습니다.";
+      
 
       const [selectedIcon, setSelectedIcon] = useState(null);
       const [imageSrc, setImageSrc] = useState(null);
-      const [isMobileView, setIsMobileView] = useState(false);
 
-      useEffect(() => {
-        const handleResize = () => {
-          setIsMobileView(window.innerWidth <= 1400);
-        };
     
-        handleResize(); // Check initial screen width
-    
-        window.addEventListener("resize", handleResize);
-        return () => {
-          window.removeEventListener("resize", handleResize);
-        };
-      }, []);
 
     const visionSkills = [
         {
@@ -62,71 +50,42 @@ const HowDoVision = (props) =>{
         },    
     ];
 
-    const handleIconClick =(icon, src) => {
+    const handleIconClick =(icon, imageSrc) => {
         setSelectedIcon(icon);
-        setImageSrc(src);
+        setImageSrc(imageSrc);
       };
 
-      const getTitle = (title) => {
-        if (isMobileView) {
-          const firstLine = "비전검사기로";
-          const secondLine = "어떤 것을 할 수 있나요?";
-          return (
-            <>
-              {firstLine}
-              <br />
-              {secondLine}
-            </>
-          );
-        }
-        return title;
-      };
+     
 
     return(
         <div className='how-do-container' >
-            {howWords.map((word,index) => (
-          <div key={index}>
-            <h1 className='how-do-title'>{getTitle(word.title)}</h1>
-            <pre className='do-subtitle'>{word.subtitles}</pre>
-          </div>
-        ))}
-            <div className='monitor-img'>
-            <img src={IndexTVImage} style={{ width: "100%", height: "auto"}} />
-             {imageSrc && (
-          <img className='skill-image' src={imageSrc}
-            style={{
-              width: "50%",
-              height: "auto",
-              position: "absolute",
-              top: "calc(50% - 22px)",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-          />
-        )}
+          <h1 className='head-line'>{title}</h1>
+          <pre>{subtitles}</pre>
+          <div className='img-container'>
+            <img className='monitor-img' src={IndexTVImage}></img>
+            {imageSrc && (
+                    <img
+                      src={imageSrc}
+                      className='selected-image'
+                      alt='Selected'
+                    />
+                  )}
             </div>
-            <div className='skill-array' style={{display: "flex"}}>
-                {visionSkills.map((item, index)=>
-                {
-                    const isSelected = selectedIcon === item.icon;
-                    
-                    return(
-                    <div key={item.id} 
-                    style={{marginRight: "10px", marginLeft: index !== 0 ? "50px" : 0,}} 
-                    onClick={()=>handleIconClick(item.icon, item.imageSrc)}>
 
-                        <FontAwesomeIcon 
-                        icon={ item.icon } 
-                        size={isMobileView >= 1200 ? "2x" : "3x"} 
-                        // style={{color:'rgb(107, 77, 108)', 
-                        style={{color:'rgb(107, 77, 108)', 
-                        cursor: 'pointer', 
-                        marginBottom: "10px",marginTop:"30px"}}/>
-                        <div>{item.skills}</div>
-                        
-                        </div>
-                );
-                })}
+            <div className='icon-sort'>
+          {visionSkills.map((item)=>(
+            <button key={item.id} 
+            className='icon-btn' 
+            onClick={()=> handleIconClick(item.icon, item.imageSrc)}
+            >
+              <FontAwesomeIcon 
+              icon={item.icon} 
+              size='4x' 
+              style={{color:'black'}} 
+              />
+              <p style={{marginTop:"10px"}}>{item.skills}</p>
+            </button>
+          ))}
             </div>
         </div>
     )
