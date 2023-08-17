@@ -28,17 +28,31 @@
   height: 550px;
   width: auto;
   z-index: 0;
+}@media (max-width: 1000px){
+  .monitor-img{
+    width: 100%;
+    height: auto;
+  }
 }
+
+
 .selected-image{
   width: auto;
   height: 250px;
   position: absolute;
-  top: 1030px;
+  top: 1050px;
   left: 50%;
   z-index: 1; /* 선택한 이미지가 IndexTVImage 위에 오도록 함*/
   transform: translate(-50%, -50%);
-  opacity: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
+}@media (max-width: 1000px){
+  .selected-image{
+    width: 50%;
+    height: auto;
+  }
 }
+
 
 .icon-btn{
   border: none;

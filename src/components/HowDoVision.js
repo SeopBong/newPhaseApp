@@ -53,8 +53,12 @@ const HowDoVision = (props) =>{
     const handleIconClick =(icon, imageSrc) => {
         setSelectedIcon(icon);
         setImageSrc(imageSrc);
-      };
+      };      // 아이콘을 클릭하였을때 이미지가 바뀌는 이벤트
 
+    const handleIconHover = (icon, imageSrc) => {
+        setSelectedIcon(icon);
+        setImageSrc(imageSrc);
+      };        // 아이콘 위에 마우스를 올렸을때 이미지가 바뀌도록
      
 
     return(
@@ -68,6 +72,9 @@ const HowDoVision = (props) =>{
                       src={imageSrc}
                       className='selected-image'
                       alt='Selected'
+                      style={{opacity: imageSrc ? 1: 0}}
+                      onMouseLeave={() => setImageSrc(null)} // 이 부분 추가
+
                     />
                   )}
             </div>
@@ -77,6 +84,8 @@ const HowDoVision = (props) =>{
             <button key={item.id} 
             className='icon-btn' 
             onClick={()=> handleIconClick(item.icon, item.imageSrc)}
+            onMouseEnter={() => handleIconHover(item.icon, item.imageSrc)} // 이 부분 추가
+
             >
               <FontAwesomeIcon 
               icon={item.icon} 
