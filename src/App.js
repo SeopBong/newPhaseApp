@@ -14,6 +14,7 @@ import PricingPart from './components/PricingPart';
 import ReviewPart from './components/ReviewPart';
 import Contect from './components/Contect';
 import Dropdown from 'react-bootstrap/Dropdown';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -215,9 +216,11 @@ const scrollToContect = () => {
         </div>
         <div ref={ContectRef}>
         <Contect />
-        </div>
-         
 
+        </div>
+         <div>
+         </div>
+          
         </div>
   </div>
       
