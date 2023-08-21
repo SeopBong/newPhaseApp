@@ -32,9 +32,9 @@ const ReviewPart = (props) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setSelectedCommentIndex((prevIndex) =>
-                prevIndex === comment.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 5000);
+                // prevIndex === comment.length - 1 ? 0 : prevIndex + 1
+                (prevIndex + 1) % comment.length
+            );}, 3000);
         return () => {
             clearInterval(interval);
         };
@@ -43,8 +43,6 @@ const ReviewPart = (props) => {
     return (
         <div className='review-container'>
            
-
-
             {comment.map((item, index) => (
                 <div
                     key={item.id}

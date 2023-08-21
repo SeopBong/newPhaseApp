@@ -8,13 +8,13 @@
 
 .process-container {
   background-color: black;
-  height: 250px;
+  height: 100%;
   display: flex;
   justify-content: center;
   position: relative;
   width: 100%;
   gap: 80px;
-
+  padding-bottom: 100px;
 }
 
 .process-container > div {
@@ -93,4 +93,21 @@
 }
 .another{
   color: #fff;
+}
+@media (max-width: 900px) {
+  .process-container {
+    padding-top: 30px;
+    flex-direction: column; /* 버튼들을 세로로 정렬 */
+    gap: 80px; /* 버튼 사이의 간격을 줄임 */
+  }
+  
+  .process-container > div {
+    align-items: center; /* 가운데 정렬 */
+  }
+  
+  .circular-button {
+    width: 100px; /* 버튼 너비 늘림 */
+    height: 100px; /* 버튼 높이 늘림 */
+    margin: 0 auto; /* 가운데 정렬 */
+  }
 }

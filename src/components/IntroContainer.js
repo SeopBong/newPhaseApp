@@ -46,11 +46,11 @@ const IntroContainer = (props) =>{
        {introWords.map((word,index) => (
          <div key={index}>
            {/*<h1 className='intro-title'>{word.title}</h1>*/}
-           <pre className={showHeadWords? 'intro-title' : ''}>
+           <pre className={showHeadWords? 'intro-title' : ''} style={{fontSize: "40px", color: "rgb(121, 221, 126)", fontWeight:"bolder"}}>
             {showHeadWords ? headWords: word.title}
            </pre>
           {/*<pre className='intro-subtitles'>{word.subtitles}</pre>*/}
-          <pre className={showMobileWords ? 'intro-subtitles' : ''}>
+          <pre className={showMobileWords ? 'intro-subtitles' : ''} style={{color:"#fff", fontSize:"20px", fontWeight:"bold"}}>
               {showMobileWords ? mobileWords : word.subtitles}
             </pre>
 
